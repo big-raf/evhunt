@@ -8,4 +8,11 @@ export * from './navbar/active-menu.directive';
 export * from './profiles/page-ribbon.component';
 export * from './profiles/profile.service';
 export * from './profiles/profile-info.model';
-
+export * from './infos/infos.route';
+export * from './infos/infos.component';
+export * from './candidature-submitted/candidature-submitted.route';
+export * from './candidature-submitted/candidature-submitted.component';
+export * from './offers/offers.component';
+export * from './offers/offers.route';
+export * from './layouts.route';
+export * from './layouts.module';

@@ -9,7 +9,9 @@ import {ResumeModule} from "../../entities/resume.module";
 export class InfosComponent implements OnInit {
     resume: ResumeModule;
     constructor() { }
-    ngOnInit() {}
+    ngOnInit() {
+        
+    }
 
     save() {
 

@@ -1,7 +1,7 @@
 <div class="ui-g">
     <div class="ui-g-6">
         <p-panel header="LinkedIn">
-            <input id="float-input" type="text" size="30" placeholder="URL" pInputText>
+            <input [(ngModel)]="linkedinURL" id="float-input" type="text" size="30" placeholder="URL" pInputText>
         </p-panel>
     </div>
     <div class="ui-g-6">
@@ -15,4 +15,11 @@
         </p-fileUpload>
     </div>
 </div>
+<!--<p-button label="Click" iconPos="right"></p-button>-->
 <p-button label="OK" style="float: right" (onClick)="save($event)"></p-button>
+
+<!--<button label="OK" style="float: right">
+    <a class="dropdown-item" routerLink="candidate" routerLinkActive="active" (click)="collapseNavbar()"><i class="fa fa-fw fa-list" aria-hidden="true"></i>
+        <span jhiTranslate="global.menu.admin.configuration">ok</span>
+    </a>
+</button>-->

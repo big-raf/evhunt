@@ -1,0 +1,62 @@
+<p-dataView #dv [value]="offers" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="type"
+            [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="ui-g">
+
+                <div class="ui-g-6 ui-md-4 filter-container">
+                    <div style="position:relative">
+                        <input type="search" pInputText placeholder="Search by brand" (keyup)="dv.filter($event.target.value)">
+                    </div>
+                </div>
+                <div class="ui-g-6 ui-md-4" style="text-align:right">
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template let-offer pTemplate="listItem">
+        <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+            <div class="ui-g-12 ui-md-8 offer-details">
+                <div class="ui-g">
+                    <div class="ui-g-2 ui-sm-6">Titre: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.title}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6">Description: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.description}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6">Competences demandées: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.competence}}</b></div>
+
+                    <div class="ui-g-2 ui-sm-6">Type de contrat: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.type}}</b></div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-1 search-icon">
+                <button pButton type="button" icon="fa-search" (click)="selectOffer($event, offer)"></button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template let-offer pTemplate="gridItem">
+        <div style="padding:.5em" class="ui-g-12 ui-md-3">
+            <p-panel [header]="offer.title" [style]="{'text-align':'center'}">
+                <div class="offer-detail">{{offer.type}} - {{offer.title}}</div>
+                <hr class="ui-widget-content" style="border-top:0">
+                <button pButton type="button" icon="fa-search" (click)="selectOffer($event, offer)" style="margin-top:0"></button>
+            </p-panel>
+        </div>
+    </ng-template>
+</p-dataView>
+
+<p-dialog header="Offer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+    <div class="ui-g" *ngIf="selectedOffer">
+        <div class="ui-g-4">Titre du poste: </div>
+        <div class="ui-g-8">{{selectedOffer.type}} - {{selectedOffer.title}}</div>
+
+        <div class="ui-g-4">Description: </div>
+        <div class="ui-g-8">{{selectedOffer.description}}</div>
+
+        <div class="ui-g-4">Competence: </div>
+        <div class="ui-g-8">{{selectedOffer.competence}}</div>
+    </div>
+</p-dialog>

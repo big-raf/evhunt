@@ -34,6 +34,11 @@ import {
 } from './layouts';
 import { InfosComponent } from './layouts/infos/infos.component';
 import { CandidatureSubmittedComponent } from './layouts/candidature-submitted/candidature-submitted.component';
+import {EvhuntLayoutsModule} from "./layouts/layouts.module";
+import {DataViewModule} from 'primeng/dataview';
+import {DropdownModule} from 'primeng/primeng';
+import {FieldsetModule} from 'primeng/fieldset';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -45,10 +50,15 @@ import { CandidatureSubmittedComponent } from './layouts/candidature-submitted/c
         EvhuntAdminModule,
         EvhuntAccountModule,
         EvhuntEntityModule,
+        EvhuntLayoutsModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         BrowserAnimationsModule,
         ButtonModule,
-        PanelModule
+        PanelModule,
+        DataViewModule,
+        DropdownModule,
+        FieldsetModule,
+        FormsModule
     ],
     declarations: [
         JhiMainComponent,

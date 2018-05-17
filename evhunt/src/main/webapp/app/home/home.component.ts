@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from '@angular/router'
 @Component({
     selector: 'jhi-home',
     templateUrl: './home.component.html',
@@ -12,17 +12,18 @@ export class HomeComponent implements OnInit {
     uploadedFile: any;
     linkedinURL: string;
 
-    constructor() {
+    constructor(private  router: Router) {
     }
 
     ngOnInit() {
     }
 
     save(){
+        this.router.navigateByUrl('/');
         if (this.linkedinURL != null){
-
-        } else if (this.uploadedFile != null) {
-            PdfParser.getText
+            this.router.navigateByUrl('/candidate');
+        } else {
+            this.router.navigateByUrl('/infos');
         }
     }
 

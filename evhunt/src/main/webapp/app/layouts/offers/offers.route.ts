@@ -1,13 +1,13 @@
 import { Route } from '@angular/router';
-import {InfosComponent} from "./infos.component";
+import {OffersComponent} from "./offers.component";
 import {UserRouteAccessService} from "../../shared";
 
-export const infosRoute: Route = {
-    path: 'infos',
-    component: InfosComponent,
+export const offersRoute: Route = {
+    path: 'offers',
+    component: OffersComponent,
     data: {
         authorities: [],
-        pageTitle: 'Informations Personnelles'
+        pageTitle: 'Listes des postes'
     },
     canActivate: [UserRouteAccessService]
 };
