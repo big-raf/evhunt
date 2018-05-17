@@ -17,6 +17,7 @@ import { EvhuntAdminModule } from './admin/admin.module';
 import { EvhuntAccountModule } from './account/account.module';
 import { EvhuntEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -39,6 +40,7 @@ import {
         EvhuntAccountModule,
         EvhuntEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
+        BrowserAnimationsModule
     ],
     declarations: [
         JhiMainComponent,
