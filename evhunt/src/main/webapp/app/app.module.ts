@@ -18,6 +18,10 @@ import { EvhuntAccountModule } from './account/account.module';
 import { EvhuntEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {PanelModule} from 'primeng/panel'
+
+
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -28,6 +32,8 @@ import {
     ActiveMenuDirective,
     ErrorComponent
 } from './layouts';
+import { InfosComponent } from './layouts/infos/infos.component';
+import { CandidatureSubmittedComponent } from './layouts/candidature-submitted/candidature-submitted.component';
 
 @NgModule({
     imports: [
@@ -40,7 +46,9 @@ import {
         EvhuntAccountModule,
         EvhuntEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ButtonModule,
+        PanelModule
     ],
     declarations: [
         JhiMainComponent,
@@ -48,7 +56,9 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+        InfosComponent,
+        CandidatureSubmittedComponent
     ],
     providers: [
         ProfileService,
