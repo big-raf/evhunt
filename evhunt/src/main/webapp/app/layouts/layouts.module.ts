@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 
 import { EvhuntSharedModule } from '../shared';
 import {HttpClientModule} from '@angular/common/http';
+import {AccordionModule} from 'primeng/accordion';
+
 
 import {
 
@@ -15,6 +17,7 @@ import {OfferService} from "./offers/offer.service";
     imports: [
         EvhuntSharedModule,
         HttpClientModule,
+        AccordionModule,
         RouterModule.forChild(layoutsState)
     ],
     declarations: [

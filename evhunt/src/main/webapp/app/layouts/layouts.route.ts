@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import {
     candidatureSubmittedRoute,
+    workflowRoute,
     infosRoute,
     offersRoute
 } from './';

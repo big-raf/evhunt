@@ -19,7 +19,8 @@ import { EvhuntEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
-import {PanelModule} from 'primeng/panel'
+import {PanelModule} from 'primeng/panel';
+
 
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
@@ -30,7 +31,8 @@ import {
     ProfileService,
     PageRibbonComponent,
     ActiveMenuDirective,
-    ErrorComponent
+    ErrorComponent,
+    WorkflowComponent
 } from './layouts';
 import { InfosComponent } from './layouts/infos/infos.component';
 import { CandidatureSubmittedComponent } from './layouts/candidature-submitted/candidature-submitted.component';
@@ -39,6 +41,9 @@ import {DataViewModule} from 'primeng/dataview';
 import {DropdownModule} from 'primeng/primeng';
 import {FieldsetModule} from 'primeng/fieldset';
 import { FormsModule } from '@angular/forms';
+import {AccordionModule} from 'primeng/accordion';
+import {ManagerFupComponent} from "./layouts/manager-follow-up/manager-follow-up.component";
+import {PosteService} from "./layouts/manager-follow-up/PosteService";
 
 @NgModule({
     imports: [
@@ -58,7 +63,8 @@ import { FormsModule } from '@angular/forms';
         DataViewModule,
         DropdownModule,
         FieldsetModule,
-        FormsModule
+        FormsModule,
+        AccordionModule
     ],
     declarations: [
         JhiMainComponent,
@@ -68,10 +74,13 @@ import { FormsModule } from '@angular/forms';
         ActiveMenuDirective,
         FooterComponent,
         InfosComponent,
-        CandidatureSubmittedComponent
+        CandidatureSubmittedComponent,
+        WorkflowComponent,
+        ManagerFupComponent
     ],
     providers: [
         ProfileService,
+        PosteService,
         PaginationConfig,
         UserRouteAccessService,
         {

@@ -1,0 +1,64 @@
+<p-accordion (onOpen)="onTabOpen($event)">
+    <p-accordionTab  *ngFor="let poste of postes" [selected]="poste.first">
+        <p-header>
+            Id : {{poste.id}}   Titre : {{poste.titre}}
+        </p-header>
+        <p>Description : {{poste.description}}</p>
+
+        <p-dataView #dv [value]="candidates">
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-4">
+                            Liste des candidats
+                        </div>
+                        <div class="ui-g-6 ui-md-4 filter-container">
+
+                        </div>
+                        <div class="ui-g-6 ui-md-4" style="text-align:right">
+                            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                        </div>
+                    </div>
+                </div>
+            </p-header>
+            <ng-template let-candidate pTemplate="listItem">
+                <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+                    <div class="ui-g-12 ui-md-3" style="text-align:center">
+                        <i class="fa fa-user fa-2x"></i> <!--src="assets/showcase/images/demo/car/{{car.brand}}.png">-->
+                    </div>
+                    <div class="ui-g-12 ui-md-8 car-details">
+                        <div class="ui-g">
+                            <div class="ui-g-2 ui-sm-6">Nom: </div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.idCandidat}}</b></div>
+
+                           <!-- <div class="ui-g-2 ui-sm-6">Year: </div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{car.year}}</b></div>-->
+
+                            <div class="ui-g-2 ui-sm-6">Brand: </div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.etat}}</b></div>
+
+                            <!--<div class="ui-g-2 ui-sm-6">Color: </div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{car.color}}</b></div>-->
+                        </div>
+                    </div>
+                    <div class="ui-g-12 ui-md-1 search-icon">
+                        <button pButton type="button" icon="fa-search" (click)="selectCar($event, car)"></button>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template let-candidate pTemplate="gridItem">
+                <div style="padding:.5em" class="ui-g-12 ui-md-3">
+                    <p-panel [header]="candidate.idCandidat" [style]="{'text-align':'center'}">
+                        <i class="fa fa-user fa-2x"></i>
+                        <div class="car-detail">{{candidate.idCandidat}} - {{candidate.etat}}</div>
+
+                        <button pButton type="button" icon="fa-search" (click)="viewCandidate($event, candidate)" style="margin-top:0"></button>
+                    </p-panel>
+                </div>
+            </ng-template>
+        </p-dataView>
+    </p-accordionTab>
+
+</p-accordion>
+
+
