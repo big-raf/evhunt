@@ -1,12 +1,19 @@
 <div class="ui-g">
     <div class="ui-g-6">
-        <p-panel header="LinkedIn">
+        <p-panel>
+            <p-header>
+                <div class="ui-helper-clearfix">
+                    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Linked</span>
+                        <img src="../../content/images/linked.png" height="20"
+                                                                   width="20"/></img>
+                </div>
+            </p-header>
             <input [(ngModel)]="linkedinURL" id="float-input" type="text" size="30" placeholder="URL" pInputText>
         </p-panel>
     </div>
     <div class="ui-g-6">
         <p-fileUpload name="demo[]" url="./upload.php"
-                      accept=".pdf" maxFileSize="1000000" chooseLabel="Parcourir..." [showUploadButton]="false" [showCancelButton]="false">
+                      accept=".pdf" maxFileSize="1000000" chooseLabel="Upload CV..." [showUploadButton]="false" [showCancelButton]="false">
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFile">
                     <li>{{uploadedFile.name}} - {{uploadedFile.size}} bytes</li>

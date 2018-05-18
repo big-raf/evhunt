@@ -9,7 +9,7 @@ export class HomeService {
     }
 
     parsePdfCV(filePath: string): Observable<any> {
-        return this.http.get('/parsePdfCV?filePath=' + filePath);
+        return this.http.get('//localhost:8080//parseFile?path=' + filePath);
     }
 
     parseCVFile(cvFile: File) : Observable<any> {

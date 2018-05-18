@@ -9,7 +9,11 @@ export class InfosService {
     }
 
     storeCV(cv: string): Observable<any> {
-        return this.http.get('/storeCandidat?id_source=3&cv=' + cv);
+        return this.http.get('//localhost:8080//storeCandidat?id_source=3&cv=' + cv);
+    }
+
+    parsePdfCV(filePath: string): Observable<any> {
+        return this.http.get('//localhost:8080//parseFile?path=' + filePath);
     }
 }
 

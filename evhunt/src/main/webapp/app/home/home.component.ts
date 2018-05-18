@@ -17,10 +17,7 @@ export class HomeComponent implements OnInit {
     constructor(private homeService: HomeService, private router: Router) { }
 
     ngOnInit() {
-            this.homeService.parsePdfCV('/Users/fabuela/Downloads/cv-ba-2.pdf').subscribe(data => {
-                this.candidat = data;
-                console.log(data)
-            });
+
     }
 
     save(){
@@ -28,7 +25,7 @@ export class HomeComponent implements OnInit {
         if (this.linkedinURL != null){
             this.router.navigateByUrl('/candidate');
         } else {
-            this.router.navigateByUrl('/infos', this.candidat);
+            this.router.navigateByUrl('/infos') ;
         }
     }
 

@@ -1,24 +1,24 @@
-<form>
+
     <p-fieldset legend="Informations Personnelles">
         <div class="ui-g ui-fluid">
             <div class="ui-g-12">
                 <div class="ui-inputgroup">
                     <span class="ui-inputgroup-addon label">Nom</span>
-                    <input type="text" pInputText [(ngModel)]="candidat.lastname">
+                    <input type="text" pInputText [(ngModel)]="candidat.prenom">
                     <!--input type="text"  value="DAMMAK" width="400px"-->
                 </div>
             </div>
             <div class="ui-g-12">
                 <div class="ui-inputgroup">
                     <span class="ui-inputgroup-addon label">Prenom</span>
-                   <input type="text" pInputText [(ngModel)]="candidat.firstame">
+                   <input type="text" pInputText [(ngModel)]="candidat.nom">
                     <!--input type="text" value= "Ahmed" width="400px"-->
                 </div>
             </div>
             <div class="ui-g-12">
                 <div class="ui-inputgroup">
                     <span class="ui-inputgroup-addon label">Email</span>
-                    <input type="text" pInputText [(ngModel)]="candidat.email">
+                    <input type="text" pInputText [(ngModel)]="candidat.mail">
                     <!--input type="text" value= "ahmed@dammak.net" width="400px"-->
 
                 </div>
@@ -26,15 +26,20 @@
             <div class="ui-g-12">
                 <div class="ui-inputgroup">
                     <span class="ui-inputgroup-addon label">Telephone</span>
-                    <input type="text" pInputText [(ngModel)]="candidat.phone" >
+                    <input type="text" pInputText [(ngModel)]="candidat.mobile" >
                     <!--input type="text" value= "00 33 6 40 95 66 65" width="400px"-->
-
-
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon label">Titre</span>
+                    <input type="text" pInputText [(ngModel)]="candidat.titre" >
+                    <!--input type="text" value= "00 33 6 40 95 66 65" width="400px"-->
                 </div>
             </div>
         </div>
     </p-fieldset>
-</form>
+
 
 
 <p-button label="OK" style="float: right" routerLink="/candidate" routerLinkActive="active"></p-button>

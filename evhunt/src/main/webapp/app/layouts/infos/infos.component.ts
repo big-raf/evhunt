@@ -25,16 +25,19 @@ export class InfosComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe(params => {
-                this.candidat = params['candidat'];
+            this.infosService.parsePdfCV("/Users/fabuela/Downloads/cv-ba-2.pdf").subscribe(data => {
+                this.candidat = data;
+                console.log(this.candidat)
+            })
             }
         );
-        this.infosService.storeCV(this.candidat).subscribe(data => {
-            this.status = data;
-            console.log(data)
-        });
     }
 
     save() {
-        this.router.navigateByUrl('/candidate', this.status);
+        this.infosService.storeCV(this.candidat).subscribe(data => {
+            this.status = data;
+            console.log(data)
+            this.router.navigateByUrl('/candidate', this.status);
+        });
     }
 }
