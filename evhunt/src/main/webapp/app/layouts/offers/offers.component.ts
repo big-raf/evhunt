@@ -26,11 +26,13 @@ export class OffersComponent implements OnInit {
     constructor(private offerService: OfferService) { }
 
     ngOnInit() {
-        this.offerService.getOfferList().then(offers => this.offers = offers);
+        this.offerService.getOfferList().subscribe(data => {
+            this.offers = data;
+            console.log(data)
+        });
         this.sortOptions = [
             {label: 'Newest First', value: '!publishedDate'},
-            {label: 'Oldest First', value: 'publishedDate'},
-            {label: 'Brand', value: 'brand'}
+            {label: 'Oldest First', value: 'publishedDate'}
         ];
 
     }

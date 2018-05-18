@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class PosteService {
+export class WorkflowService {
 
     constructor(private http: HttpClient) {
     }

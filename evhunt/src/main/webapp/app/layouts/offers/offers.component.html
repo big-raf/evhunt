@@ -20,16 +20,16 @@
             <div class="ui-g-12 ui-md-8 offer-details">
                 <div class="ui-g">
                     <div class="ui-g-2 ui-sm-6">Titre: </div>
-                    <div class="ui-g-10 ui-sm-6"><b>{{offer.title}}</b></div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.titre}}</b></div>
 
                     <div class="ui-g-2 ui-sm-6">Description: </div>
                     <div class="ui-g-10 ui-sm-6"><b>{{offer.description}}</b></div>
 
-                    <div class="ui-g-2 ui-sm-6">Compéences demandées: </div>
-                    <div class="ui-g-10 ui-sm-6"><b>{{offer.competence}}</b></div>
+                    <div class="ui-g-2 ui-sm-6">Compétences demandées: </div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.keywords}}</b></div>
 
                     <div class="ui-g-2 ui-sm-6">Type de contrat: </div>
-                    <div class="ui-g-10 ui-sm-6"><b>{{offer.type}}</b></div>
+                    <div class="ui-g-10 ui-sm-6"><b>{{offer.typeContrat}}</b></div>
                 </div>
             </div>
             <div class="ui-g-12 ui-md-1 search-icon">
@@ -39,8 +39,8 @@
     </ng-template>
     <ng-template let-offer pTemplate="gridItem">
         <div style="padding:.5em" class="ui-g-12 ui-md-3">
-            <p-panel [header]="offer.title" [style]="{'text-align':'center'}">
-                <div class="offer-detail">{{offer.type}} - {{offer.title}}</div>
+            <p-panel [header]="offer.titre" [style]="{'text-align':'center'}">
+                <div class="offer-detail">{{offer.typeContrat}} - {{offer.titre}}</div>
                 <hr class="ui-widget-content" style="border-top:0">
                 <button pButton type="button" icon="fa-search" (click)="selectOffer($event, offer)" style="margin-top:0"></button>
             </p-panel>
@@ -48,15 +48,30 @@
     </ng-template>
 </p-dataView>
 
-<p-dialog header="Offer Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+<p-dialog header="Details du poste" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" (onAfterHide)="onDialogHide()">
     <div class="ui-g" *ngIf="selectedOffer">
         <div class="ui-g-4">Titre du poste: </div>
-        <div class="ui-g-8">{{selectedOffer.type}} - {{selectedOffer.title}}</div>
+        <div class="ui-g-8">{{selectedOffer.titre}}</div>
+
+        <div class="ui-g-4">Département: </div>
+        <div class="ui-g-8">{{selectedOffer.departement}}</div>
+
+        <div class="ui-g-4">Metier: </div>
+        <div class="ui-g-8">{{selectedOffer.metier}}</div>
 
         <div class="ui-g-4">Description: </div>
         <div class="ui-g-8">{{selectedOffer.description}}</div>
 
         <div class="ui-g-4">Competence: </div>
-        <div class="ui-g-8">{{selectedOffer.competence}}</div>
+        <div class="ui-g-8">{{selectedOffer.keywords}}</div>
+
+        <div class="ui-g-4">Date d'ouverture du poste: </div>
+        <div class="ui-g-8">{{selectedOffer.datePoste}}</div>
+
+        <div class="ui-g-4">Etat: </div>
+        <div class="ui-g-8">{{selectedOffer.etat}}</div>
+
+        <p-button label="Postuler" style="float:right">
+        </p-button>
     </div>
 </p-dialog>

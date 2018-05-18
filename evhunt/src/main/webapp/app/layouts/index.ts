@@ -16,6 +16,10 @@ export * from './workflow/workflow.route';
 export * from './workflow/workflow.component';
 export * from './manager-follow-up/manager-follow-up.route';
 export * from './manager-follow-up/manager-follow-up.component';
+export * from './resume/resume.route';
+export * from './resume/resume.component';
+export * from './candidate-list/candidate-list.component';
+export * from './'
 export * from './offers/offers.component';
 export * from './offers/offers.route';
 export * from './layouts.route';

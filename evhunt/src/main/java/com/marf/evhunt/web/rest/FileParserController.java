@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class FileParserController {
 
-    @PostMapping("/parsecv")
+    /*@PostMapping("/parsecv")
     public  parseFile() {
         return repository.findAll().stream()
             .filter(this::isCool)
             .collect(Collectors.toList());
-    }
+    }*/
 }

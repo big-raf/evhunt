@@ -6,7 +6,7 @@ export const managerFupRoute: Route =
         path: 'manager-fup',
         component: ManagerFupComponent,
         data: {
-            authorities: [],
-            pageTitle: 'error.title'
+            /*authorities: ['ROLE_MANAGER'],*/
+            pageTitle: 'Suivi des candidats'
         },
     };

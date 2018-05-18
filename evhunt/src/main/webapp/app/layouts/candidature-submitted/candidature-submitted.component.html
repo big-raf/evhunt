@@ -1,15 +1,39 @@
 <p-panel>
     <p-header>
-        <div class="ui-helper-clearfix">
-            <img src="../../../content/images/ok.png" height="50" width="50" text-align="center">
+        <div class="ui-helper-clearfix text-center">
+            <i class="fa fa-check fa-2x" style="color: #1c7430"></i>
         </div>
     </p-header>
     <div>
-        Votre Candidature a ete enregistree
-        Un mail de confirmation a ete envoye a l'adresse ahmed@dammak.net
+        <h3>Votre Candidature a ete enregistrée</h3>
+        <h4>Un mail de confirmation a ete envoyé a l'adresse ahmed@dammak.net</h4>
     </div>
-    <div>
-        Ces offres pourraient vous interesser:
+    <div style="margin-top: 30px">
+        Ces offres pourraient vous intéresser:
+    <p-dataView [value]="offers" [rows]="2">
+        <ng-template let-offer pTemplate="listItem">
+            <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+                <div class="ui-g-12 ui-md-8 offer-details">
+                    <div class="ui-g">
+                        <div class="ui-g-2 ui-sm-6">Titre: </div>
+                        <div class="ui-g-10 ui-sm-6"><b>{{offer.titre}}</b></div>
 
+                        <div class="ui-g-2 ui-sm-6">Description: </div>
+                        <div class="ui-g-10 ui-sm-6"><b>{{offer.description}}</b></div>
+
+                        <div class="ui-g-2 ui-sm-6">Compétences demandées: </div>
+                        <div class="ui-g-10 ui-sm-6"><b>{{offer.keywords}}</b></div>
+
+                        <div class="ui-g-2 ui-sm-6">Type de contrat: </div>
+                        <div class="ui-g-10 ui-sm-6"><b>{{offer.typeContrat}}</b></div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-1 search-icon">
+                    <button pButton type="button" icon="fa-search" (click)="selectOffer($event, offer)"></button>
+                </div>
+            </div>
+        </ng-template>
+        <p-button label="Voir plus..." style="float: right"></p-button>
+    </p-dataView>
     </div>
 </p-panel>

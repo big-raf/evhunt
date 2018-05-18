@@ -32,7 +32,7 @@ import {
     PageRibbonComponent,
     ActiveMenuDirective,
     ErrorComponent,
-    WorkflowComponent
+    WorkflowComponent, ResumeComponent, CandidateListComponent
 } from './layouts';
 import { InfosComponent } from './layouts/infos/infos.component';
 import { CandidatureSubmittedComponent } from './layouts/candidature-submitted/candidature-submitted.component';
@@ -43,7 +43,8 @@ import {FieldsetModule} from 'primeng/fieldset';
 import { FormsModule } from '@angular/forms';
 import {AccordionModule} from 'primeng/accordion';
 import {ManagerFupComponent} from "./layouts/manager-follow-up/manager-follow-up.component";
-import {PosteService} from "./layouts/manager-follow-up/PosteService";
+import {PosteService} from "./layouts/manager-follow-up/poste.service";
+import {CandidateService} from "./layouts/candidate-list/candidate.service";
 
 @NgModule({
     imports: [
@@ -76,11 +77,14 @@ import {PosteService} from "./layouts/manager-follow-up/PosteService";
         InfosComponent,
         CandidatureSubmittedComponent,
         WorkflowComponent,
-        ManagerFupComponent
+        ManagerFupComponent,
+        ResumeComponent,
+        CandidateListComponent
     ],
     providers: [
         ProfileService,
         PosteService,
+        CandidateService,
         PaginationConfig,
         UserRouteAccessService,
         {

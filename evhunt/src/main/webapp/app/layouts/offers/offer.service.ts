@@ -1,16 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Offer} from './offer';
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class OfferService {
 
   constructor(private http: HttpClient) {}
 
-  getOfferList() {
-    return this.http.get<any>('./offers_file.json')
-      .toPromise()
-      .then(res => <Offer[]> res.data)
-      .then(data => data);
+  getOfferList(): Observable<any>{
+    return this.http.get<any>('//localhost:8080//findAllPostes');
   }
 }

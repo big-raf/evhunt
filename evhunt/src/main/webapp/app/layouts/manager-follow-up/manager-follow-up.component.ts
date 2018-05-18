@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { JhiEventManager, JhiParseLinks, JhiAlertService } from 'ng-jhipster';
 
 import { ITEMS_PER_PAGE, Principal, User, UserService } from '../../shared';
-import {PosteService} from "./PosteService";
+import {PosteService} from "./poste.service";
 
 @Component({
     selector: 'jhi-manager-fup',
@@ -16,7 +16,8 @@ export class ManagerFupComponent implements OnInit, OnDestroy {
     candidates : Array<any>;
 
     constructor(
-        private posteService: PosteService
+        private posteService: PosteService,
+        private router: Router
     ) {
 
     }
@@ -25,7 +26,7 @@ export class ManagerFupComponent implements OnInit, OnDestroy {
         this.posteService.getAllByManager().subscribe(data => {
             this.postes = data;
             this.postes[0].first = true;
-            this.posteService.getAllCandidatesByPoste(this.postes[0].id).subscribe(data => {
+            this.posteService.getAllCandidaturesByPoste(this.postes[0].id).subscribe(data => {
                 this.candidates = data;
                 console.log(data)
             });
@@ -38,11 +39,13 @@ export class ManagerFupComponent implements OnInit, OnDestroy {
     }
 
     viewCandidate(event: Event, candidate: any) {
-
+        alert("click");
+        alert(candidate.id);
         event.preventDefault();
+
     }
     onTabOpen(e) {
-        this.posteService.getAllCandidatesByPoste(this.postes[e.index].id).subscribe(data => {
+        this.posteService.getAllCandidaturesByPoste(this.postes[e.index].id).subscribe(data => {
             this.candidates = data;
             console.log(data)
         });
