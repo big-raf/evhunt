@@ -29,33 +29,37 @@
                     <div class="ui-g-12 ui-md-8 car-details">
                         <div class="ui-g">
                             <div class="ui-g-2 ui-sm-6">Nom: </div>
-                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.idCandidat}}</b></div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.nom}}</b></div>
 
                            <!-- <div class="ui-g-2 ui-sm-6">Year: </div>
                             <div class="ui-g-10 ui-sm-6"><b>{{car.year}}</b></div>-->
 
-                            <div class="ui-g-2 ui-sm-6">Brand: </div>
-                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.etat}}</b></div>
+                            <div class="ui-g-2 ui-sm-6">Prenom: </div>
+                            <div class="ui-g-10 ui-sm-6"><b>{{candidate.prenom}}</b></div>
+
+                            <div class="ui-g-2 ui-sm-6" *ngFor="let avis of candidate.avisRh">
+                                <div class="ui-g-10 ui-sm-6">RH: <b>{{avis.rhName}}</b></div>
+                                <div class="ui-g-10 ui-sm-6">Avis: <b>{{avis.avisRh}}</b></div>
+                            </div>
 
                             <!--<div class="ui-g-2 ui-sm-6">Color: </div>
                             <div class="ui-g-10 ui-sm-6"><b>{{car.color}}</b></div>-->
                         </div>
                     </div>
                     <div class="ui-g-12 ui-md-1 search-icon">
-                        <button pButton type="button" icon="fa-search"> <a [routerLink]="['/resume', candidate.idCandidat]"> </a></button>
+                        <a [routerLink]="['/resume', candidate.id]" class="btn btn-warning"> <i class="fa fa-search fa-2x"></i></a>
 
                     </div>
                 </div>
             </ng-template>
             <ng-template let-candidate pTemplate="gridItem">
                 <div style="padding:.5em" class="ui-g-12 ui-md-3">
-                    <p-panel [header]="candidate.idCandidat" [style]="{'text-align':'center'}">
+                    <p-panel [header]="candidate.id" [style]="{'text-align':'center'}">
                         <i class="fa fa-user fa-2x"></i>
-                        <div class="car-detail">{{candidate.idCandidat}} - {{candidate.etat}}</div>
-                        <div class="ui-g-12 ui-md-1 search-icon">
-                            <button pButton type="button" icon="fa-search"> <a [routerLink]="['/resume', candidate.idCandidat]"> </a></button>
+                        <div class="car-detail">{{candidate.prenom}} - {{candidate.nom}}</div>
+                        <hr class="ui-widget-content" style="border-top:0">
+                        <a [routerLink]="['/resume', candidate.id]" class="btn btn-warning"> <i class="fa fa-search fa-2x"></i></a>
 
-                        </div>
                     </p-panel>
                 </div>
             </ng-template>

@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="ui-g-12 ui-md-1 search-icon">
-                        <a [routerLink]="['/resume', candidate.id]" type="button"> <i class="fa fa-search fa-2x"></i></a>
+                    <a [routerLink]="['/resume', candidate.id]" class="btn btn-warning"> <i class="fa fa-search fa-2x"></i></a>
                     </div>
                 </div>
             </ng-template>
@@ -49,7 +49,7 @@
                         <i class="fa fa-user fa-2x"></i>
                         <div class="car-detail">{{candidate.nom}} - {{candidate.prenom}} - {{candidate.competences}}</div>
 
-                        <a [routerLink]="['/resume', candidate.id]"> <button type="button" icon="fa-search"></button></a>
+                        <a [routerLink]="['/resume', candidate.id]" class="btn btn-warning"> <i class="fa fa-search fa-2x"></i></a>
                     </p-panel>
                 </div>
             </ng-template>

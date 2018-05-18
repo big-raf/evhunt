@@ -23,6 +23,8 @@ import {
 } from './';
 import { OffersComponent } from './offers/offers.component';
 import {OfferService} from "./offers/offer.service";
+import {HomeService} from "../home/home.service";
+import {InfosService} from "./infos/infos.service";
 
 @NgModule({
     imports: [
@@ -46,7 +48,9 @@ import {OfferService} from "./offers/offer.service";
 
     OffersComponent],
     providers: [
-        OfferService
+        OfferService,
+        HomeService,
+        InfosService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -29,9 +29,6 @@ export class ResumeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        alert("test");
-        console.log(this.resume);
-        console.log(this.id);
         this.sub = this.route.params.subscribe(params => {
             this.id = params['id']; // (+) converts string 'id' to a number
             this.resume = this.candidateService.getCandiateById(this.id);

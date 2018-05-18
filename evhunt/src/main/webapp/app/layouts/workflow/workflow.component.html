@@ -1,20 +1,21 @@
 <p-accordion>
-    <p-accordionTab header="Header 1"  *ngFor="let candidature of candidatures">
+    <p-accordionTab header="Header 1"  *ngFor="let candidature of candidatures" [selected]="true">
 
         <p-header>
-            Id : {{candidature.idPoste}}
+            Intitule offre : {{candidature.nomPoste}}
         </p-header>
 
         <div class="container">
             <div class="wrapper">
                 <div class="arrow-steps clearfix">
-                    <div class="step current"> <span> Step 1</span> </div>
-                    <div class="step"> <span>Step 2 some words</span> </div>
-                    <div class="step"> <span> Step 3</span> </div>
-                    <div class="step"> <span>Step 4</span> </div>
+                    <div class="step current"> <span> CV enregistré</span> </div>
+                    <div class="step"> <span>CV validé</span> </div>
+                    <div class="step current"> <span> CV non retenu</span> </div>
+                    <div class="step"> <span>Entretien</span> </div>
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary" style="float: right;margin-top: -3em">Annuler ma candidature</button>
     </p-accordionTab>
 </p-accordion>
 

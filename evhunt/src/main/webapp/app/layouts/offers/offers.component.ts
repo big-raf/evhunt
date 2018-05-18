@@ -10,8 +10,8 @@ import {SelectItem} from 'primeng/api';
 })
 export class OffersComponent implements OnInit {
 
-    offers: Offer[];
-    selectedOffer: Offer;
+    offers: any[];
+    selectedOffer: any;
 
     displayDialog: boolean;
 

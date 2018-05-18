@@ -16,4 +16,12 @@ export class CandidateService {
         return this.http.get('//localhost:8080//findCandidatById/?id='+id);
     }
 
+    getAvisRhByCandidate(id): Observable<any> {
+        return this.http.get('//localhost:8080//findAvisRhByCandidatId/?id='+id);
+    }
+
+    getListByPostId(id): Observable<any> {
+        return this.http.get('//localhost:8080//filterCandidatsByPosteId/?id='+id);
+    }
+
 }
