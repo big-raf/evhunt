@@ -1,12 +1,12 @@
-<p-dataView #dv [value]="offers" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="type"
-            [sortField]="sortField" [sortOrder]="sortOrder">
+
+<p-dataView #dv [value]="offers" [paginator]="true" [rows]="20" paginatorPosition="both" filterBy="type" [sortField]="sortField" [sortOrder]="sortOrder">
     <p-header>
         <div class="ui-helper-clearfix">
             <div class="ui-g">
 
                 <div class="ui-g-6 ui-md-4 filter-container">
                     <div style="position:relative">
-                        <input type="search" pInputText placeholder="Search by brand" (keyup)="dv.filter($event.target.value)">
+                        <input type="search" pInputText placeholder="Search" (keyup)="dv.filter($event.target.value)">
                     </div>
                 </div>
                 <div class="ui-g-6 ui-md-4" style="text-align:right">
@@ -25,7 +25,7 @@
                     <div class="ui-g-2 ui-sm-6">Description: </div>
                     <div class="ui-g-10 ui-sm-6"><b>{{offer.description}}</b></div>
 
-                    <div class="ui-g-2 ui-sm-6">Competences demandées: </div>
+                    <div class="ui-g-2 ui-sm-6">Compéences demandées: </div>
                     <div class="ui-g-10 ui-sm-6"><b>{{offer.competence}}</b></div>
 
                     <div class="ui-g-2 ui-sm-6">Type de contrat: </div>

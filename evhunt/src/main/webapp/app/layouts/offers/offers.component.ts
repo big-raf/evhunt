@@ -26,12 +26,13 @@ export class OffersComponent implements OnInit {
     constructor(private offerService: OfferService) { }
 
     ngOnInit() {
-
-        this.offers = [];
+        this.offerService.getOfferList().then(offers => this.offers = offers);
         this.sortOptions = [
             {label: 'Newest First', value: '!publishedDate'},
-            {label: 'Oldest First', value: 'publishedDate'}
+            {label: 'Oldest First', value: 'publishedDate'},
+            {label: 'Brand', value: 'brand'}
         ];
+
     }
 
     selectOffer(event: Event, offer: Offer) {
@@ -41,7 +42,7 @@ export class OffersComponent implements OnInit {
     }
 
     onSortChange(event) {
-        const value = event.value;
+        let value = event.value;
 
         if (value.indexOf('!') === 0) {
             this.sortOrder = -1;
